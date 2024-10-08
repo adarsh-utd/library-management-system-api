@@ -6,7 +6,9 @@ from api.router import auth, books, members
 
 app=FastAPI()
 
-origins = ["*"]
+origins = [
+    "https://adarsh-utd.github.io",
+    "*"]
 
 app.add_middleware(
     CORSMiddleware,
