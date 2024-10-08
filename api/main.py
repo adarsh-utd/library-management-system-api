@@ -1,13 +1,12 @@
 from fastapi import FastAPI
 import uvicorn
-from starlette.middleware.cors import CORSMiddleware
 
+from fastapi.middleware.cors import CORSMiddleware
 from api.router import auth, books, members
 
 app=FastAPI()
 
 origins = [
-    "https://adarsh-utd.github.io",
     "*"]
 
 app.add_middleware(
