@@ -156,7 +156,7 @@ async def remove_book(book_id:PyObjectId,user:object=Depends(authenticate))->JSO
     return JSONResponse(status_code=status.HTTP_200_OK,
                         content=response)
 
-@book_router.post("/books/{book_id}/borrow-return/{book_status}")
+@book_router.post("/books/{book_id}/borrow-return/{borrow_status}")
 async def borrow_return_book(book_id:PyObjectId,borrow_status:bool,user:object=Depends(authenticate))->JSONResponse:
     """
     This endpoint allow members to borrow or return existing books
