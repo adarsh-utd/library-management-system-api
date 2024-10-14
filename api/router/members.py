@@ -184,7 +184,7 @@ async def get_history(member_id: PyObjectId, user: object = Depends(authenticate
 
         )
     member = await users_collection.find_one({"_id": ObjectId(member_id), "is_deleted": False})
-    if member:
+    if not member:
         raise HTTPException(
             status_code=status.HTTP_404_NOT_FOUND,
             detail="Member not found",
