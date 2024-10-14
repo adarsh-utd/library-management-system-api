@@ -27,7 +27,7 @@ async def authenticate(token:str=Depends(oauth2_scheme)):
     return user
 
 async def get_user(username:str)->object:
-    return await users_collection.find_one({"username":username})
+    return await users_collection.find_one({"username":username,"is_deleted":False})
 
 
 async def authenticate_user(username: str, password: str) -> object:
