@@ -7,6 +7,7 @@ from api.router import auth, books, members
 app=FastAPI()
 
 origins = [
+    "https://adarsh-utd.github.io/library-management-system-web",
     "*"]
 
 app.add_middleware(
