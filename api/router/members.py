@@ -183,7 +183,7 @@ async def get_history(member_id: PyObjectId, user: object = Depends(authenticate
             detail="User not allowed to perform this action.",
 
         )
-    member = await users_collection.find_one({"_id": member_id, "is_deleted": False})
+    member = await users_collection.find_one({"_id": ObjectId(member_id), "is_deleted": False})
     if member:
         raise HTTPException(
             status_code=status.HTTP_404_NOT_FOUND,
